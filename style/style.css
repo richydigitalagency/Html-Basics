@@ -4,10 +4,10 @@
     box-sizing: border-box;
     font-family:Arial, Helvetica, sans-serif;
 }
-nav {
-    background-color: rgb(35, 33, 33);
-    color: white;
-    padding: 20px;
+
+body {
+    width: 100%;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -32,6 +32,19 @@ a:hover{
    
     border-radius: 3px;
 }
+
+/* Sidebar Navigation (default) */
+.side_nav {
+    background-color: rgb(35, 33, 33);
+    color: white;
+    padding: 10px;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    /* height: 100vh; */
+}
+
+
 .p_1{
     line-height: 24px;
     padding: 20px;
@@ -45,15 +58,57 @@ h2{
     /* border: 2px solid green;  */
 }
 
+/* Main content with sidebar */
 .main_content{
     display: grid;
     grid-template-columns: 200px 2fr;
 }
+
+/* Top navigation bar (hidden by default) */
+.top_nav {
+    background-color: rgb(35, 33, 33);
+    color: white;
+    padding: 10px;
+    display: none;  /* Hidden by default */
+    justify-content: center;
+    gap: 20px;
+}
+
+.top_nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    transition: background 0.5s ease;
+}
+
+.top_nav a:hover {
+    background-color: white;
+    color: rgb(35, 33, 33);
+    border-radius: 3px;
+}
+
+
 @media screen and (max-width: 512px){
     nav{
-        display: flex;
+        display: grid;
         flex-direction: column;
         gap: 10px;
     }
 }
 
+/* Responsive Design */
+@media screen and (max-width: 512px) {
+    /* Hide sidebar, show top navbar */
+    .side_nav {
+        display: none;
+    }
+    
+    .top_nav {
+        display: flex;
+    }
+
+    /* Adjust main content layout */
+    .main_content {
+        grid-template-columns: 1fr;
+    }
+}

@@ -9,7 +9,7 @@
 </head>
 <style>
    *{
-    overflow: hidden!important;
+    overflow-x: hidden;
    }
 
    .parent_div{
@@ -30,9 +30,17 @@
 </style>
 <body>
 
+  <!-- Horizontal Navbar (hidden by default) -->
+  <nav class="top_nav">
+    <a href="index.html" class="ancher" id="link1" title="Go to home page ">Home </a>
+    <a href="about.html" class="ancher" id="link2"> About </a>
+    <a href="contact.html" class="ancher" id="link3"> Contact </a>
+    <a href="blog.html" class="ancher" id="link4"> Blog </a>
+</nav>
 
   <main class="main_content">
-    <nav>
+    <!-- vertical sidebar_nav -->
+    <nav class="side_nav">
         <a href="index.html" class="ancher" id="link1" title="Go to home page ">Home </a>
         <a href="about.html" class="ancher" id="link2"> About </a>
         <a href="contact.html" class="ancher" id="link3"> Contact </a>
